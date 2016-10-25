@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.recursive.mapper.InfoVOMapper" >
+  <resultMap id="BaseResultMap" type="com.recursive.pojo.InfoVO" >
+    <id column="salon_info_id" property="salonInfoId" jdbcType="INTEGER" />
+    <result column="salon_name" property="salonName" jdbcType="VARCHAR" />
+    <result column="salon_address" property="salonAddress" jdbcType="VARCHAR" />
+    <result column="contacts" property="contacts" jdbcType="VARCHAR" />
+    <result column="contact_phone" property="contactPhone" jdbcType="VARCHAR" />
+    <result column="salon_wechat_public_no" property="salonWechatPublicNo" jdbcType="VARCHAR" />
+    <result column="contacts_open_id" property="contactsOpenId" jdbcType="VARCHAR" />
+    <result column="contacts_wechat_name" property="contactsWechatName" jdbcType="VARCHAR" />
+    <result column="contacts_wechat_head" property="contactsWechatHead" jdbcType="VARCHAR" />
+    <result column="salon_intention" property="salonIntention" jdbcType="TINYINT" />
+    <result column="brand_name" property="brandName" jdbcType="VARCHAR" />
+    <result column="contacts_sex" property="contactsSex" jdbcType="TINYINT" />
+    <result column="staff_size" property="staffSize" jdbcType="INTEGER" />
+    <result column="salon_comment" property="salonComment" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    salon_info_id, salon_name, salon_address, contacts, contact_phone, salon_wechat_public_no, 
+    contacts_open_id, contacts_wechat_name, contacts_wechat_head, salon_intention, brand_name, 
+    contacts_sex, staff_size, salon_comment
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.recursive.pojo.InfoVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from salon_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from salon_info
+    where salon_info_id = #{salonInfoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from salon_info
+    where salon_info_id = #{salonInfoId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.recursive.pojo.InfoVOExample" >
+    delete from salon_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.recursive.pojo.InfoVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into salon_info (salon_info_id, salon_name, salon_address, 
+      contacts, contact_phone, salon_wechat_public_no, 
+      contacts_open_id, contacts_wechat_name, contacts_wechat_head, 
+      salon_intention, brand_name, contacts_sex, 
+      staff_size, salon_comment)
+    values (#{salonInfoId,jdbcType=INTEGER}, #{salonName,jdbcType=VARCHAR}, #{salonAddress,jdbcType=VARCHAR}, 
+      #{contacts,jdbcType=VARCHAR}, #{contactPhone,jdbcType=VARCHAR}, #{salonWechatPublicNo,jdbcType=VARCHAR}, 
+      #{contactsOpenId,jdbcType=VARCHAR}, #{contactsWechatName,jdbcType=VARCHAR}, #{contactsWechatHead,jdbcType=VARCHAR}, 
+      #{salonIntention,jdbcType=TINYINT}, #{brandName,jdbcType=VARCHAR}, #{contactsSex,jdbcType=TINYINT}, 
+      #{staffSize,jdbcType=INTEGER}, #{salonComment,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.recursive.pojo.InfoVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into salon_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="salonInfoId != null" >
+        salon_info_id,
+      </if>
+      <if test="salonName != null" >
+        salon_name,
+      </if>
+      <if test="salonAddress != null" >
+        salon_address,
+      </if>
+      <if test="contacts != null" >
+        contacts,
+      </if>
+      <if test="contactPhone != null" >
+        contact_phone,
+      </if>
+      <if test="salonWechatPublicNo != null" >
+        salon_wechat_public_no,
+      </if>
+      <if test="contactsOpenId != null" >
+        contacts_open_id,
+      </if>
+      <if test="contactsWechatName != null" >
+        contacts_wechat_name,
+      </if>
+      <if test="contactsWechatHead != null" >
+        contacts_wechat_head,
+      </if>
+      <if test="salonIntention != null" >
+        salon_intention,
+      </if>
+      <if test="brandName != null" >
+        brand_name,
+      </if>
+      <if test="contactsSex != null" >
+        contacts_sex,
+      </if>
+      <if test="staffSize != null" >
+        staff_size,
+      </if>
+      <if test="salonComment != null" >
+        salon_comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="salonInfoId != null" >
+        #{salonInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="salonName != null" >
+        #{salonName,jdbcType=VARCHAR},
+      </if>
+      <if test="salonAddress != null" >
+        #{salonAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null" >
+        #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="salonWechatPublicNo != null" >
+        #{salonWechatPublicNo,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsOpenId != null" >
+        #{contactsOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsWechatName != null" >
+        #{contactsWechatName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsWechatHead != null" >
+        #{contactsWechatHead,jdbcType=VARCHAR},
+      </if>
+      <if test="salonIntention != null" >
+        #{salonIntention,jdbcType=TINYINT},
+      </if>
+      <if test="brandName != null" >
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsSex != null" >
+        #{contactsSex,jdbcType=TINYINT},
+      </if>
+      <if test="staffSize != null" >
+        #{staffSize,jdbcType=INTEGER},
+      </if>
+      <if test="salonComment != null" >
+        #{salonComment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.recursive.pojo.InfoVOExample" resultType="java.lang.Integer" >
+    select count(*) from salon_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update salon_info
+    <set >
+      <if test="record.salonInfoId != null" >
+        salon_info_id = #{record.salonInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="record.salonName != null" >
+        salon_name = #{record.salonName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salonAddress != null" >
+        salon_address = #{record.salonAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contacts != null" >
+        contacts = #{record.contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactPhone != null" >
+        contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salonWechatPublicNo != null" >
+        salon_wechat_public_no = #{record.salonWechatPublicNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsOpenId != null" >
+        contacts_open_id = #{record.contactsOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsWechatName != null" >
+        contacts_wechat_name = #{record.contactsWechatName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsWechatHead != null" >
+        contacts_wechat_head = #{record.contactsWechatHead,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salonIntention != null" >
+        salon_intention = #{record.salonIntention,jdbcType=TINYINT},
+      </if>
+      <if test="record.brandName != null" >
+        brand_name = #{record.brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsSex != null" >
+        contacts_sex = #{record.contactsSex,jdbcType=TINYINT},
+      </if>
+      <if test="record.staffSize != null" >
+        staff_size = #{record.staffSize,jdbcType=INTEGER},
+      </if>
+      <if test="record.salonComment != null" >
+        salon_comment = #{record.salonComment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update salon_info
+    set salon_info_id = #{record.salonInfoId,jdbcType=INTEGER},
+      salon_name = #{record.salonName,jdbcType=VARCHAR},
+      salon_address = #{record.salonAddress,jdbcType=VARCHAR},
+      contacts = #{record.contacts,jdbcType=VARCHAR},
+      contact_phone = #{record.contactPhone,jdbcType=VARCHAR},
+      salon_wechat_public_no = #{record.salonWechatPublicNo,jdbcType=VARCHAR},
+      contacts_open_id = #{record.contactsOpenId,jdbcType=VARCHAR},
+      contacts_wechat_name = #{record.contactsWechatName,jdbcType=VARCHAR},
+      contacts_wechat_head = #{record.contactsWechatHead,jdbcType=VARCHAR},
+      salon_intention = #{record.salonIntention,jdbcType=TINYINT},
+      brand_name = #{record.brandName,jdbcType=VARCHAR},
+      contacts_sex = #{record.contactsSex,jdbcType=TINYINT},
+      staff_size = #{record.staffSize,jdbcType=INTEGER},
+      salon_comment = #{record.salonComment,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recursive.pojo.InfoVO" >
+    update salon_info
+    <set >
+      <if test="salonName != null" >
+        salon_name = #{salonName,jdbcType=VARCHAR},
+      </if>
+      <if test="salonAddress != null" >
+        salon_address = #{salonAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        contacts = #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null" >
+        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="salonWechatPublicNo != null" >
+        salon_wechat_public_no = #{salonWechatPublicNo,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsOpenId != null" >
+        contacts_open_id = #{contactsOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsWechatName != null" >
+        contacts_wechat_name = #{contactsWechatName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsWechatHead != null" >
+        contacts_wechat_head = #{contactsWechatHead,jdbcType=VARCHAR},
+      </if>
+      <if test="salonIntention != null" >
+        salon_intention = #{salonIntention,jdbcType=TINYINT},
+      </if>
+      <if test="brandName != null" >
+        brand_name = #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsSex != null" >
+        contacts_sex = #{contactsSex,jdbcType=TINYINT},
+      </if>
+      <if test="staffSize != null" >
+        staff_size = #{staffSize,jdbcType=INTEGER},
+      </if>
+      <if test="salonComment != null" >
+        salon_comment = #{salonComment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where salon_info_id = #{salonInfoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recursive.pojo.InfoVO" >
+    update salon_info
+    set salon_name = #{salonName,jdbcType=VARCHAR},
+      salon_address = #{salonAddress,jdbcType=VARCHAR},
+      contacts = #{contacts,jdbcType=VARCHAR},
+      contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      salon_wechat_public_no = #{salonWechatPublicNo,jdbcType=VARCHAR},
+      contacts_open_id = #{contactsOpenId,jdbcType=VARCHAR},
+      contacts_wechat_name = #{contactsWechatName,jdbcType=VARCHAR},
+      contacts_wechat_head = #{contactsWechatHead,jdbcType=VARCHAR},
+      salon_intention = #{salonIntention,jdbcType=TINYINT},
+      brand_name = #{brandName,jdbcType=VARCHAR},
+      contacts_sex = #{contactsSex,jdbcType=TINYINT},
+      staff_size = #{staffSize,jdbcType=INTEGER},
+      salon_comment = #{salonComment,jdbcType=VARCHAR}
+    where salon_info_id = #{salonInfoId,jdbcType=INTEGER}
+  </update>
+</mapper>

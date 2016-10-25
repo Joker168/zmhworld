@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.recursive.mapper.TaskVOMapper" >
+  <resultMap id="BaseResultMap" type="com.recursive.pojo.TaskVO" >
+    <id column="task_id" property="taskId" jdbcType="INTEGER" />
+    <result column="task_code" property="taskCode" jdbcType="VARCHAR" />
+    <result column="salon_info_id" property="salonInfoId" jdbcType="INTEGER" />
+    <result column="task_create_time" property="taskCreateTime" jdbcType="TIMESTAMP" />
+    <result column="task_finish_time" property="taskFinishTime" jdbcType="TIMESTAMP" />
+    <result column="task_type" property="taskType" jdbcType="TINYINT" />
+    <result column="task_comment" property="taskComment" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    task_id, task_code, salon_info_id, task_create_time, task_finish_time, task_type, 
+    task_comment
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.recursive.pojo.TaskVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from task
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from task
+    where task_id = #{taskId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from task
+    where task_id = #{taskId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.recursive.pojo.TaskVOExample" >
+    delete from task
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.recursive.pojo.TaskVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into task (task_id, task_code, salon_info_id, 
+      task_create_time, task_finish_time, task_type, 
+      task_comment)
+    values (#{taskId,jdbcType=INTEGER}, #{taskCode,jdbcType=VARCHAR}, #{salonInfoId,jdbcType=INTEGER}, 
+      #{taskCreateTime,jdbcType=TIMESTAMP}, #{taskFinishTime,jdbcType=TIMESTAMP}, #{taskType,jdbcType=TINYINT}, 
+      #{taskComment,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.recursive.pojo.TaskVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into task
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="taskId != null" >
+        task_id,
+      </if>
+      <if test="taskCode != null" >
+        task_code,
+      </if>
+      <if test="salonInfoId != null" >
+        salon_info_id,
+      </if>
+      <if test="taskCreateTime != null" >
+        task_create_time,
+      </if>
+      <if test="taskFinishTime != null" >
+        task_finish_time,
+      </if>
+      <if test="taskType != null" >
+        task_type,
+      </if>
+      <if test="taskComment != null" >
+        task_comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="taskId != null" >
+        #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="taskCode != null" >
+        #{taskCode,jdbcType=VARCHAR},
+      </if>
+      <if test="salonInfoId != null" >
+        #{salonInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="taskCreateTime != null" >
+        #{taskCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskFinishTime != null" >
+        #{taskFinishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskType != null" >
+        #{taskType,jdbcType=TINYINT},
+      </if>
+      <if test="taskComment != null" >
+        #{taskComment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.recursive.pojo.TaskVOExample" resultType="java.lang.Integer" >
+    select count(*) from task
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update task
+    <set >
+      <if test="record.taskId != null" >
+        task_id = #{record.taskId,jdbcType=INTEGER},
+      </if>
+      <if test="record.taskCode != null" >
+        task_code = #{record.taskCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salonInfoId != null" >
+        salon_info_id = #{record.salonInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="record.taskCreateTime != null" >
+        task_create_time = #{record.taskCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.taskFinishTime != null" >
+        task_finish_time = #{record.taskFinishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.taskType != null" >
+        task_type = #{record.taskType,jdbcType=TINYINT},
+      </if>
+      <if test="record.taskComment != null" >
+        task_comment = #{record.taskComment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update task
+    set task_id = #{record.taskId,jdbcType=INTEGER},
+      task_code = #{record.taskCode,jdbcType=VARCHAR},
+      salon_info_id = #{record.salonInfoId,jdbcType=INTEGER},
+      task_create_time = #{record.taskCreateTime,jdbcType=TIMESTAMP},
+      task_finish_time = #{record.taskFinishTime,jdbcType=TIMESTAMP},
+      task_type = #{record.taskType,jdbcType=TINYINT},
+      task_comment = #{record.taskComment,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recursive.pojo.TaskVO" >
+    update task
+    <set >
+      <if test="taskCode != null" >
+        task_code = #{taskCode,jdbcType=VARCHAR},
+      </if>
+      <if test="salonInfoId != null" >
+        salon_info_id = #{salonInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="taskCreateTime != null" >
+        task_create_time = #{taskCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskFinishTime != null" >
+        task_finish_time = #{taskFinishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskType != null" >
+        task_type = #{taskType,jdbcType=TINYINT},
+      </if>
+      <if test="taskComment != null" >
+        task_comment = #{taskComment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where task_id = #{taskId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recursive.pojo.TaskVO" >
+    update task
+    set task_code = #{taskCode,jdbcType=VARCHAR},
+      salon_info_id = #{salonInfoId,jdbcType=INTEGER},
+      task_create_time = #{taskCreateTime,jdbcType=TIMESTAMP},
+      task_finish_time = #{taskFinishTime,jdbcType=TIMESTAMP},
+      task_type = #{taskType,jdbcType=TINYINT},
+      task_comment = #{taskComment,jdbcType=VARCHAR}
+    where task_id = #{taskId,jdbcType=INTEGER}
+  </update>
+</mapper>
