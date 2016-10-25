@@ -2,10 +2,19 @@ package com.recursive.mapper;
 
 import com.recursive.pojo.InfoVO;
 import com.recursive.pojo.InfoVOExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface InfoVOMapper {
+	/**
+	 * 根据拜访状态查询美容院信息
+	 * @param salonIntention
+	 * @return
+	 */
+	List<InfoVO> selectInfoBySalonIntention(@Param("salonIntention") Byte salonIntention,@Param("offset") Integer offset,@Param("limit") Integer limit);
+	
     int countByExample(InfoVOExample example);
 
     int deleteByExample(InfoVOExample example);

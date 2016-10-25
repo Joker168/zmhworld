@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="../salonInfo/byIntention.action" method="get">
+		<select name="salonIntention">
+			<option value="0">已拜访</option>
+			<option value="1">未拜访</option>
+		</select>
+		<input type="submit" value="提交">
+	</form>
 </body>
 </html>

@@ -17,6 +17,17 @@
     <result column="staff_size" property="staffSize" jdbcType="INTEGER" />
     <result column="salon_comment" property="salonComment" jdbcType="VARCHAR" />
   </resultMap>
+  
+  <!-- 根据拜访状态查询美容院信息 -->
+  <select id="selectInfoBySalonIntention" resultType="com.recursive.pojo.InfoVO">
+  	select 
+  		salon_name,salon_address,contacts,contact_phone,salon_wechat_public_no,contacts_open_id,contacts_wechat_name,
+  		contacts_wechat_head,salon_intention,brand_name,contacts_sex,staff_size,salon_comment
+  	from salon_info
+  	where salon_intention = #{salonIntention}
+  	limit #{offset}, #{limit}
+  </select>
+  	
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
