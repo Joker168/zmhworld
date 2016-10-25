@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    color: #000;
+}
+
+.header {
+    background: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    color: #898989;
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+}
+
+.header img {
+    width: 22px;
+}
+
+.header h3 {
+    line-height: 22px;
+}
+
+.header .return_icon img {
+    width: 45px;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+.list-group-item:last-child {
+    border-radius: 0px;
+}
+
+.list-group-item.list-none {
+    background: #eee none repeat scroll 0 0;
+    border-bottom: 0 none;
+    box-shadow: none;
+}
+
+.buy .buybutton {
+    background: #cc0000;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    border: 0;
+}
+.buy .gray{ background:#c0c0c0;}
+.row .text-right {
+    color: #cc0000;
+}
+
+.row .hui { color: #999}
+
+label {
+    font-weight: normal;
+}
+
+.buymoney {
+    height: 18px;
+    line-height: 18px;
+    width: 90%;
+    text-align: right;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+}
+
+.bao {
+    color: #979797;
+    font-size: 14px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 15px;
+}
+.bao img {
+    width: 18px;
+}
+
+.about-example {
+    margin-top: 45px;
+}
+.list-group-item .logo {
+    margin: 0 auto;
+    width: 120px;
+    display: block;
+}
+.list-group-item .desc {
+    color: #9fa0a0;
+    line-height: 18px;
+    margin-top: 10px;
+}
+.col-xs-8.text-right {
+    color: #000;
+    font-size: 14px;
+}
+.col-xs-8.font_gray {
+    color:#989898;
+    font-size: 14px;
+}
+.col-xs-8.font_red{ color:#e93a3a;}
+
+.about-list .row{
+    font-size: 14px;
+    line-height: 22px;
+    padding: 2px 0;
+}
+
+
+
+.row label img { width: 22px}
+.list-none .col-xs-12 > img { width: 22px}
+
+.footer_nav {
+    background:  #f3f3f3;
+    border-top: 1px solid #c9c9c9;
+    padding:5px;
+}
+
+.footer_nav img {
+    width: 28px;
+}
+.footer_nav .col-xs-3 {
+    text-align: center;
+}
+.footer_nav span {
+    display: block;
+    height: 34px;
+}
+.footer_nav a {
+    color: #a9a9a9;
+}
+
+
+@media (min-width: @screen-sm-min) {
+
+}
+
+/* 涓瓑灞忓箷锛堟闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 992px锛� */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* 澶у睆骞曪紙澶ф闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 1200px锛� */
+@media (min-width: @screen-lg-min) {
+
+}

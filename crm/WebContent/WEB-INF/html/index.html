@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset="utf-8">
+    <title>我的社保</title>
+    <meta name="keywords" content="我的社保" >
+    <meta name="description" content="我的社保" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Bootstrap不支持IE的兼容模式。为了让IE浏览器运行最新的渲染模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+    <link href="css/bootstrap/bootstrap.min-v3.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap/bootstrap-theme-v3.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/common/global.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/ylcwap/style.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/ylcwap/index.css" media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/common/lab.js"></script>
+<!--[ifltIE9]>
+<script type="text/javascript" src="<script type="text/javascript" src="http://statics.51duoying.com/js/bootstrap/html5shiv.js?1401187140"></script>
+"></script>
+<![endif]--></head>
+
+    <body>
+        <link href="css/ylcwap/index.css" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/plugin/jquery.lazyload.js"></script>
+<style type="text/css">
+.content_hd{ height:30px; border-bottom:1px solid #ccc; position:relative;}
+.content_hd .scrollbar{ position:absolute; left:0px; bottom:-1px; width:20%; height:2px; background:#F00; margin-left:2.5%;}
+.content_hd li{ height:30px; float:left; width:25%; box-sizing:border-box; text-align:center; line-height:30px; color:#999;}
+.content{ display:none;}
+
+input[type=text],input[type=password] {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        min-height: 32px;
+        margin: 0;
+        padding: 7px 8px;
+        outline: none;
+        color: #333;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: right center;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        transition: all 0.15s ease-in;
+        -webkit-transition: all 0.15s ease-in 0;
+        vertical-align: middle;
+      }
+.button {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        padding: 8px 0;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+        white-space: nowrap;
+        background-color: #eaeaea;
+        background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+        background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+        background-image: linear-gradient(#fafafa, #eaeaea);
+        background-repeat: repeat-x;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        border-bottom-color: #c5c5c5;
+        box-shadow: 0 1px 3px rgba(0,0,0,.05);
+        vertical-align: middle;
+        cursor: pointer;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-appearance: none;
+      }
+      .button:hover,.button:active {
+        background-position: 0 -5px;
+        border-color: #ccc #ccc #b5b5b5;
+      }
+      .button:active {
+        background-color: #dadada;
+        border-color: #b5b5b5;
+        background-image: none;
+        box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+      }
+      .button:focus,
+      input[type=text]:focus,
+      input[type=password]:focus {
+        outline: none;
+        border-color: #51a7e8;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.075), 0 0 5px rgba(81,167,232,.5);
+      }
+      #search input[type=text] {
+        font-size: 18px;
+		width:98%;
+		padding:0;
+		margin:0;padding:3px 5px;
+      }
+      #search .button {
+        padding: 10px;
+		width:80%;
+		text-align:center
+      }
+	  #search{padding:0}
+	  .col-xs-9{padding:0}
+	  .col-xs-3{padding:0}
+	  .col-xs-2{padding:0; width:16.66%;}
+	  .col-xs-7{padding:0}
+</style>
+<script type="text/javascript">
+$(function(){
+	$(".content_hd li").each(function(i){
+		$(this).click(function(){
+			var oWidth=($(this).width()*i);
+			$(".scrollbar").animate({left:oWidth},300);
+		    $(".tab_content .content").eq(i).siblings().hide();
+		    $(".tab_content .content").eq(i).show();
+			})
+		  })
+	})
+</script>
+
+<div class="tab_content">
+<section class="content" style="display:block;">
+
+	<header style="border-top:#CCC 1px solid; height:39px;">
+    	<div class="col-xs-12" id="search">
+    	<div class="col-xs-9"><input type="text" name="q"></div>
+    	<div class="col-xs-3"><input class="button" type="submit" value="搜索"></div>
+        </div>
+    </header>
+
+    <header style="height:360px;border-top:#efefef 1px solid;border-bottom:#efefef 1px solid;">
+    	<div class="col-xs-12" style="height:100%; max-height:120px; overflow:hidden;border-bottom:#efefef 1px solid;">
+        <div class="col-xs-2" style="margin-top:15px; height:100%;"><img src="images/user_icon_1.png" style="width:65px;"></div>
+    	<div class="col-xs-8" style="font-size:14px;color:#CCC; text-align:left; margin:0;">
+        <p style="color:#999;margin-top:5px;line-height:24px">美容院名称：女王传奇SPA</p>
+        <p style="color:#999;line-height:18px">地址：广东省广州市天河区黄埔大道西126号云来斯堡写字楼13A美联国际智美汇</p>
+        <p style="color:#999;line-height:24px">联系电话：020-12345678</p></div>
+        <div class="col-xs-2" style="margin:auto;height:100%;"><a href="./xiangqing.html"><button style="width:90%; margin:auto; padding:5px; border-radius:5px; background-color:#0CF; border-style:none; color:#FFF; margin-top:50%;">详情</button></a></div></div> 
+    </header>
+
+<nav class="navbar-fixed-bottom footer_nav">
+    <div class="row">
+        <div class="col-xs-4">
+            <a href="/index/index/index">
+                <span><img src="images/recom_1_icon.png" ></span>
+                <p>首页</p>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="/index/licai/list">
+                <span><img src="images/list_0_icon.png"></span>
+                <p>查询</p>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="/my/index/index">
+                <span><img src="images/assets_0_icon.png" style="margin-top:8px"></span>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script type="text/javascript" src="js/plugin/TouchSlide.1.1.js"></script>
+<script type="text/javascript">
+$LAB
+.script("js/bootstrap/bootstrap_v3_min.js").wait(function(){
+});
+</script>
+</body>
+</html>

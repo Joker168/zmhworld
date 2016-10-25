@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    color: #000;
+    font-size: 14px;
+}
+
+.header {
+    background: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    color: #898989;
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+}
+
+.header img {
+    width: 22px;
+}
+
+.header h3 {
+    line-height: 22px;
+}
+
+.header .return_icon img {
+    width: 45px;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+.list-group-item:last-child {
+    border-radius: 0px;
+}
+
+.list {
+    margin-top: 45px;
+    line-height: 20px;
+}
+
+.list .date {
+    color: #999;
+    margin-top: 6px;
+}
+
+.list .text-right {
+    color:#cc0000
+}
+
+#loading { height: 30px; width: 100%; text-align: center; }
+#loading label { left: 5px; position: relative; top: 10px;  }
+
+.img img {
+    margin-top: -10px;
+    position: absolute;
+    right: 0;
+    width: 34px;
+}
+
+@media (min-width: @screen-sm-min) {
+
+}
+
+/* 涓瓑灞忓箷锛堟闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 992px锛� */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* 澶у睆骞曪紙澶ф闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 1200px锛� */
+@media (min-width: @screen-lg-min) {
+
+}

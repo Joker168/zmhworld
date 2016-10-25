@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    color: #000;
+	background:#eee;
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    color: #898989;
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+}
+
+.header img {
+    width: 22px;
+}
+
+.header h3 {
+    line-height: 22px;
+}
+
+.header .return_icon img {
+    width: 23px;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+.list-group-item:last-child {
+    border-radius: 0px;
+}
+
+
+.my-example {
+    margin-top: 45px;
+}
+.list-group-item .logo {
+    margin: 0 auto;
+    width: 120px;
+    display: block;
+}
+.list-group-item .desc {
+    color: #9fa0a0;
+    line-height: 18px;
+    margin-top: 10px;
+}
+.col-xs-6.text-right {
+    color: #cc0000;
+}
+
+.my-list .row{
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.my-list .row img {
+    vertical-align: middle;
+}
+
+
+
+
+.footer_nav {
+    background:  #f3f3f3;
+    border-top: 1px solid #c9c9c9;
+    padding:5px;
+}
+
+.footer_nav img {
+    width: 28px;
+}
+.footer_nav .col-xs-3 {
+    text-align: center;
+}
+.footer_nav span {
+    display: block;
+    height: 34px;
+}
+.footer_nav a {
+    color: #a9a9a9;
+}
+
+.jiantou_right {
+    width: 10px;
+}
+
+
+.bg .list-group-item {
+    background: #e93a3a;
+    color: #fff;
+    padding: 20px 15px;
+}
+.bg .list-group-item .ttt {
+    border: 1px solid #f36d6d;
+    border-radius: 4px;
+    display: block;
+    float: right;
+    color: #fff;
+    margin-top: 50px;
+    text-align: center;
+    width: 110px;
+    font-size: 12px;
+}
+.bg .list-group-item .tt {
+    margin-top: 10px;
+    font-size: 20px;
+	color:#fff;
+}
+
+.tot .tttt, .tot .t {
+    color: #333;
+}
+.tot .tt {
+    color: #333;
+    line-height: 30px;
+}
+.tot .img {
+    margin-top: -15px;
+    position: absolute;
+    right: 15px;
+    width: 15px;
+}
+.list-group { box-shadow:none;}
+
+@media (min-width: @screen-sm-min) {
+
+}
+
+/* 涓瓑灞忓箷锛堟闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 992px锛� */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* 澶у睆骞曪紙澶ф闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 1200px锛� */
+@media (min-width: @screen-lg-min) {
+
+}

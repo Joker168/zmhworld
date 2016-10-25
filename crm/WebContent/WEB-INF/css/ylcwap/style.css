@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    color: #333333;
+    font: 12px/1.2;
+    padding: 0;
+}
+
+input, button {
+    font: 12px/1.2 "Microsoft Yahei","Arial","Helvetica Neue",Helvetica,"Hiragino Sans GB","STHeiti","WenQuanYi Micro Hei",sans-serif;
+}
+
+.cl777 {
+    color:#777777
+}
+.cle12e34 {
+    color: #e12e34;
+}
+
+.fn12 {
+    font-size: 12px;
+}
+.fn13 {
+    font-size: 13px;
+}
+.fn14 {
+    font-size: 14px;
+}
+.fn16 {
+    font-size: 16px;
+}
+.fn18 {
+    font-size: 18px;
+}
+
+.fw {
+    font-weight: bold;
+}
+
+.fff {
+    background: #fff;
+}
+
+
+nav .navBox {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.navBox h2 {
+    background: none repeat scroll 0 0 #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    color: #898989;
+}
+.navBox .menu-list {
+    background: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    overflow: hidden;
+    text-align: center;
+}
+.navBox .menu-list span.bline {
+    border-top: 2px solid #ce3f41;
+    display: block;
+    line-break: 1px;
+    margin: 0 auto;
+    position: relative;
+    top: 15px;
+    width: 100px;
+}
+.navBox .menu-list a {
+    float: left;
+    padding: 15px 0;
+    width: 50%;
+    color: #666;
+    font-size: 14px;
+}
+.navBox .menu-list a.on {
+    color: #ce3f41;
+}
+
+

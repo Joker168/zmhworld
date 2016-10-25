@@ -1,0 +1,285 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    color: #000;
+}
+
+.detail_header {
+    background: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    color: #898989;
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+}
+
+.detail_header img {
+    width: 22px;
+}
+
+.detail_header h3 {
+    line-height: 22px;
+}
+
+.detail_header .return_icon img {
+    width: 45px;
+}
+
+.detail_exl {
+    background: #fff;
+    margin-top: 42px;
+    padding: 15px 35px;
+}
+
+.detail_exl .title {
+    overflow: hidden;
+    padding: 10px 0;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+.detail_exl .title img {
+    float: left;
+    width: 22px;
+    margin-top: 1px;
+}
+.detail_exl .title h4 {
+    float: left;
+    font-size: 18px;
+    margin-left: 5px;
+    /*height: 20px;*/
+    /*line-height: 20px;*/
+    line-height: 24px;
+    margin-top: -1px;
+    width: 220px;
+}
+.detail_exl .yp {
+    font-size:14px;
+    line-height: 22px;
+}
+.detail_exl .tr {
+    text-align: right;
+    line-height: 20px;
+    color: #7b7b7b;
+}
+.detail_exl .fc {
+    color: #e93a3a;
+}
+.detail_exl .yp .yq {
+    color: #7b7b7b;
+    margin-bottom: 8px;
+}
+.detail_exl .yp .pr {
+    color: #e93a3a;
+    font-size: 36px;
+}
+.detail_exl .yp i {
+    color: #e93a3a;
+    font-style: normal;
+    margin-left: 2px;
+}
+.detail_exl .yp img {
+    width:20px;
+}
+
+
+.detail_countdown {
+    background: #e93a3a;
+    color: #fff;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+
+.detail_countdown img {
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 20px;
+}
+
+.detail_remarks {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 10px 35px;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+.detail_remarks p {
+    font-size:14px;
+    color: #7b7b7b;
+    line-height: 24px;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+.list-group-item:last-child {
+    border-radius: 0px;
+}
+
+.list-group-item {
+    padding: 13px;
+}
+.list-group-item .tit {
+    color: #000;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.list-group-item .msg {
+    text-align: right;
+    font-size: 14px;
+}
+
+.list-group-item .msg i {
+    color: #7b7b7b;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.J_lasttime {
+    font-style: normal;
+}
+
+.bao {
+    color: #979797;
+    font-size: 14px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.bao img {
+    width: 20px;
+}
+
+
+.footer_nav {
+    background: none repeat scroll 0 0 #fff;
+    border-top: 1px solid #d7d7d7;
+    height: 60px;
+    padding-top: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    text-align: center;
+}
+.footer_nav img {
+    width: 40px;
+}
+.footer_nav .buy {
+    background: none repeat scroll 0 0 #cc0000;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    margin-left: 10px;
+    border: 0;
+}
+
+.footer_nav .buys {
+    background:#999;
+}
+
+.footer_nav .buylv {
+    background: #f4b8ae;
+}
+
+
+
+.modal-body {
+    font-size: 14px;
+}
+
+.modal-body .row {
+    padding: 8px 0;
+    line-height: 26px;
+}
+
+.modal-title {
+    color: #cc0000;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form-control {
+    height: 24px;
+}
+
+.modal-footer .buy {
+    background: none repeat scroll 0 0 #cc0000;
+    border: 0 none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+    width: 100%;
+}
+
+.yd, .dt, .rd {
+    color: #cc0000;
+}
+.yd b, .dt b, .rd b {
+    font-size: 24px;
+    font-weight: normal;
+}
+.yd i, .dt i {
+    font-style: normal;
+}
+
+.input-group {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.input-group .form-control {
+    border:1px #ccc solid;
+    width: 90%;
+}
+
+.content strong {
+    background: #f2f2f2;
+    display: block;
+    text-indent: 1em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 4px 0;
+}
+.content {
+    font-size: 14px;
+    line-height: 24px;
+    width: 90%;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+
+.icons img {
+    width: 20px;
+    margin-left: 30px;
+    margin-right:5px;
+}
+.icons {
+    text-align: left;
+}
+
+
+@media (min-width: @screen-sm-min) {
+
+}
+
+/* 涓瓑灞忓箷锛堟闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 992px锛� */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* 澶у睆骞曪紙澶ф闈㈡樉绀哄櫒锛屽ぇ浜庣瓑浜� 1200px锛� */
+@media (min-width: @screen-lg-min) {
+
+}
