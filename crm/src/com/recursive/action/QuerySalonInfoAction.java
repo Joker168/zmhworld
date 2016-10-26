@@ -28,6 +28,10 @@ public class QuerySalonInfoAction {
 		return "salon_info_list";
 	}
 	
+	@RequestMapping("/test.action")
+	public String testAction(Model model){
+		return "/test";
+	}
 	
 	
 	
